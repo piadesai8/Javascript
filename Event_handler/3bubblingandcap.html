@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <title>Show video box example</title>
+    <style>
+        div {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 480px;
+            height: 380px;
+            border-radius: 10px;
+            background-color: #eee;
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1));
+        }
+        .hidden {
+            left: -50%;
+        }
+        .showing {
+            left: 50%;
+        }
+        div video {
+            display: block;
+            width: 400px;
+            margin: 40px auto;
+        }
+    </style>
+</head>
+<body>
+<button>Display video</button>
+
+<div class="hidden">
+    <video controls>
+        <source src="vid.mp4" type="video/mp4">
+
+    </video>
+</div>
+
+<script>
+    var btn = document.querySelector('button');
+    var videoBox = document.querySelector('div');
+    var video = document.querySelector('video');
+    btn.onclick = function() {
+        videoBox.setAttribute('class','showing');
+    }
+    videoBox.onclick = function() {
+        videoBox.setAttribute('class','hidden');
+    };
+    video.onclick = function() {
+        video.play();
+    };
+
+</script>
+</body>
+</html>

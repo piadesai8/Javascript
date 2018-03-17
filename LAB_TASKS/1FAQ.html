@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #myInput {
+            /*background-image: url('/css/searchicon.png');*/
+            background-position: 10px 12px;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+
+        #myUL {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #myUL li a {
+            border: 1px solid #ddd;
+            margin-top: -1px; /* Prevent double borders */
+            background-color: #f6f6f6;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block
+        }
+
+        #myUL li a:hover:not(.header) {
+            background-color: #eee;
+        }
+        .faq > ul > li:not( .is-active ) > div
+        {
+            display: none;
+        }
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Frequently asked Questions about New Zealand</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<ul id="myUL">
+    <li id="faq1" class="faq"><a href="#">When is the best time to visit New Zealand?</a>
+    <div class="panel">You can visit New Zealand at any time of the year. Summer and winter temperatures vary by only about 10ºC over most of the country, making New Zealand an ideal holiday destination all year round.
+        New Zealand has four quite distinct seasons - Spring (September - November), Summer (December - February), Autumn/Fall (March - May) and Winter (June - August).
+        In summer there's plenty of sunshine, and activities in and around the water include rafting, snorkelling, diving and kayaking.
+        You'll find snow on the mountains in winter and excellent skiing. Away from the mountains, New Zealand winters are mild and temperatures generally do not fall below freezing.</div>
+    </li>
+    <li id="faq2" class="faq"><a href="#">What types of accommodation are available in New Zealand?</a>
+<div class="panel">New Zealand offers a wide range of accommodation options from top-class hotels, exclusive lodges, motels, guest houses, and farm or homestays to holiday parks and backpacker hostels.
+    You might also like the freedom to discover New Zealand at your own pace in a campervan. Two, four or six berth vans are available to rent, offering all the comforts of home including a shower, refrigerator and microwave.</div>
+    </li>
+    <li id="faq3" class="faq"><a href="#">What's the climate like?</a>
+    <div class="panel">New Zealand's seasons are the reverse of the Northern Hemisphere. This means that the warmest months are December, January and February, while the coldest are in June, July and August. Don't let cold months put you off - winters tend to be short and generally fairly mild.</div>
+    </li>
+    <li id="faq4" class="faq"><a href="#">What clothes should I take?</a>
+    <div class="panel">Dress is informal and relaxed on most occasions. Smart casual clothes are acceptable at most restaurants and night-spots. Men are generally not expected to wear suits and ties, except in a few of the top formal bars and restaurants in major cities.
+        In summer a light jacket or sweater should be included in your luggage should the weather turn cooler or you visit the high country. You can expect some rain, so include a light waterproof jacket or coat.
+        Pack warm winter clothing if visiting between May and September. Layer your clothing.</div>
+    </li>
+
+</ul>
+
+<script>
+    function myFunction() {
+        var input, filter, ul, li, a, i, faq, j;
+
+        input = document.getElementById("myInput");
+
+        faq=document.getElementsByClassName("faq");
+
+
+
+
+
+
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName("li");
+                    for (i = 0; i < li.length; i++) {
+                        a = li[i].getElementsByTagName("a")[0];
+                        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                            li[i].style.display = "";
+                        } else {
+                            li[i].style.display = "none";
+
+                        }
+                    }
+
+
+        for(j=0;j<faq.length;j++)
+        {console.log("over");
+            faq[j].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+
+        }
+
+
+
+    }
+
+
+</script>
+
+</body>
+</html>

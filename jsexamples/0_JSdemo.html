@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p.center1 {
+
+            text-transform: uppercase;
+            border: 1px solid blue;
+            background: #b7b8ee;
+            color: blue;
+            box-shadow: 3px 3px 4px #9680fa;
+            border-radius: 10px;
+            padding: 30px 15px;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+
+        }
+
+    </style>
+</head>
+<body> <p class="center1">Student Name: Mark</p>
+<script>
+    var para = document.querySelector('p');
+    para.addEventListener('click', updateName);
+    function updateName() {
+        var name = prompt('Enter a new name');
+        para.textContent = 'Student Name: ' + name;
+    }
+    </script>
+</body>
+</html>

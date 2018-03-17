@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="form">
+    <div>
+        <label for="month">Month:</label>
+        <select id="month">
+            <option value="-1" disabled selected>--Pick A Month--</option>
+            <option value="1" >January</option>
+            <option value="2" >February</option>
+            <option value="3" >March</option>
+            <option value="4" >April</option>
+            <option value="5" >May</option>
+            <option value="6" >June</option>
+            <option value="7" >July</option>
+            <option value="8" >August</option>
+            <option value="9" >September</option>
+            <option value="10" >October</option>
+            <option value="11" >November</option>
+            <option value="12" >December</option>
+        </select>
+    </div>
+    <div>
+        Days:<br />
+        <div id="days_area"></div>
+        <script type="text/javascript">
+            var select = document.querySelector('select');
+            select.onchange = function() {
+                var m = select.value;
+                if(m == 1 || m == 3 || m == 5 || m== 7 || m==8 || m == 10 || m == 12) {
+                    var boxes = "";
+                    for(i = 1; i <= 31 ; i++)
+                    {
+                        boxes += '<span style="width:10%;display:inline-block; background-color: #a9fa19;"><input type="checkbox" id="' + i + '" /><label for="day_' + i + '">Day ' + i + '</label></span>';
+                    }
+                    document.getElementById('days_area').innerHTML = boxes;
+            }else if (m==2){
+                    var boxes = "";
+                    for(i = 1; i <= 28 ; i++)
+                    {
+                        boxes += '<span style="width:10%;display:inline-block; background-color: #9680fa;"><input type="checkbox" id="' + i + '" /><label for="day_' + i + '">Day ' + i + '</label></span>';
+                    }
+                    document.getElementById('days_area').innerHTML = boxes;
+                }else {
+                    var boxes = "";
+                    for(i = 1; i <= 30 ; i++)
+                {
+                    boxes += '<span style="width:10%;display:inline-block;background-color: #fa7885;"><input type="checkbox" id="' + i + '" /><label for="day_' + i + '">Day ' + i + '</label></span>';
+                }
+                    document.getElementById('days_area').innerHTML = boxes;
+                }
+            }
+        </script>
+    </div>
+</form>
+</body>
+</html>

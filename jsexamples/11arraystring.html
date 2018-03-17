@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> Display Array Element (String to Array)</h1>
+<p id="demo"></p>
+<h1> Display String (Array to String)</h1>
+<p id="demo1"></p>
+<script>
+    var mylist = "web,app,AR,VR";
+    var arr = mylist.split(",");
+    document.getElementById("demo").innerHTML = arr[2];
+//    reverse
+    var myArray = ["web","app","AR","VR"];
+    var list2 = myArray.join(",");
+    document.getElementById("demo1").innerHTML = list2;
+
+//    Another method
+   /* var myArray = ["web","app","AR","VR"];
+    myArray.toString();
+    document.getElementById("demo1").innerHTML = myArray;*/
+</script>
+</body>
+</html>

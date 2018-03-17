@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            text-align: center;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+<p>
+    Classes MON & WED ------ BCS Y1 & Y2  <br>
+    Classes TUE       ------ BCS Y1 MID YEAR <br>
+    Classes THU       ------ BCS Y1 MID YEAR & Y3 <br>
+    Classes FRI       ------ BCS Y3 <br>
+</p>
+<script>
+   var day=  prompt("Select Days for class");
+   if (day =="mon" || day =="wed"){
+       alert("BCS Y1 & Y2");
+   } else if (day=="tue"){
+       alert("BCS Y1 Mid Year");
+   }else if (day=="thu"){
+       alert(" BCS Y1 Mid Year & BCS Y3")
+   }else if (day=="fri"){
+       alert(" BCS Y3")
+   }
+   else {
+       alert("Holiday");
+   }
+</script>
+</body>
+</html>
